@@ -12,3 +12,18 @@ export interface DashboardStats {
   newToday: number;
   consultations: number;
 }
+
+export interface Doctor {
+  id: string;
+  name: string;
+  specialty: string;
+  email: string;
+  phone: string;
+  patients: number;
+  status: 'active' | 'inactive';
+}
+
+export interface AnalyticsData {
+  userGrowth: { month: string; users: number }[];
+  consultationStats: { day: string; consultations: number }[];
+}
