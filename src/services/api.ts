@@ -12,10 +12,10 @@ const mockUsers = [
 ];
 
 const mockDoctors = [
-  { id: '1', name: 'Dr. John Smith', specialty: 'Fertility', email: 'john@ferti.com', phone: '+1234567890', patients: 145, status: 'active' as const },
-  { id: '2', name: 'Dr. Maria Garcia', specialty: 'Gynecology', email: 'maria@ferti.com', phone: '+1234567891', patients: 132, status: 'active' as const },
-  { id: '3', name: 'Dr. James Lee', specialty: 'Endocrinology', email: 'james@ferti.com', phone: '+1234567892', patients: 98, status: 'active' as const },
-  { id: '4', name: 'Dr. Emily Chen', specialty: 'Fertility', email: 'emily@ferti.com', phone: '+1234567893', patients: 167, status: 'active' as const },
+  { id: '1', name: 'Dr. SHAMI Cephas', specialty: 'Fertility', email: 'cephas@ferti.com', phone: '+1234567890', patients: 145, status: 'active' as const },
+  { id: '2', name: 'Dr. BEZA Ornella', specialty: 'Gynecology', email: 'beza@ferti.com', phone: '+1234567891', patients: 132, status: 'active' as const },
+  { id: '3', name: 'Dr. TUYISENGE Hertier', specialty: 'Endocrinology', email: 'hertier@ferti.com', phone: '+1234567892', patients: 98, status: 'active' as const },
+  { id: '4', name: 'Dr. MIZERO Aimee', specialty: 'Fertility', email: 'aimee@ferti.com', phone: '+1234567893', patients: 167, status: 'active' as const },
 ];
 
 const mockAnalytics = {
