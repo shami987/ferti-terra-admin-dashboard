@@ -1,20 +1,33 @@
 import { Link, useLocation } from 'react-router-dom';
 
-const Sidebar = () => {
+interface SidebarProps {
+  role: 'admin' | 'doctor';
+  onLogout: () => void;
+}
+
+const Sidebar = ({ role }: SidebarProps) => {
   const location = useLocation();
   
-  const menuItems = [
+  const adminMenuItems = [
     { path: '/', icon: '📊', label: 'Dashboard' },
     { path: '/users', icon: '👥', label: 'Users' },
     { path: '/doctors', icon: '⚕️', label: 'Doctors' },
     { path: '/analytics', icon: '📈', label: 'Analytics' },
   ];
 
+  const doctorMenuItems = [
+    { path: '/doctor-dashboard', icon: '🩺', label: 'My Dashboard' },
+    { path: '/appointments', icon: '📅', label: 'Appointments' },
+    { path: '/patients', icon: '👤', label: 'My Patients' },
+  ];
+
+  const menuItems = role === 'admin' ? adminMenuItems : doctorMenuItems;
+
   return (
     <div className="w-64 bg-gray-900 text-white h-screen fixed left-0 top-0">
       <div className="p-6">
         <h1 className="text-2xl font-bold text-primary">FertiTerra</h1>
-        <p className="text-sm text-gray-400">Admin Dashboard</p>
+        <p className="text-sm text-gray-400">{role === 'admin' ? 'Admin Dashboard' : 'Doctor Portal'}</p>
       </div>
       
       <nav className="mt-6">

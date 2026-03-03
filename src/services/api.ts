@@ -12,10 +12,10 @@ const mockUsers = [
 ];
 
 const mockDoctors = [
-  { id: '1', name: 'Dr. SHAMI Cephas', specialty: 'Fertility', email: 'cephas@ferti.com', phone: '+1234567890', patients: 145, status: 'active' as const },
-  { id: '2', name: 'Dr. BEZA Ornella', specialty: 'Gynecology', email: 'beza@ferti.com', phone: '+1234567891', patients: 132, status: 'active' as const },
-  { id: '3', name: 'Dr. TUYISENGE Hertier', specialty: 'Endocrinology', email: 'hertier@ferti.com', phone: '+1234567892', patients: 98, status: 'active' as const },
-  { id: '4', name: 'Dr. MIZERO Aimee', specialty: 'Fertility', email: 'aimee@ferti.com', phone: '+1234567893', patients: 167, status: 'active' as const },
+  { id: '1', name: 'Dr. John Smith', specialty: 'Fertility', email: 'john@ferti.com', phone: '+1234567890', patients: 145, status: 'active' as const },
+  { id: '2', name: 'Dr. Maria Garcia', specialty: 'Gynecology', email: 'maria@ferti.com', phone: '+1234567891', patients: 132, status: 'active' as const },
+  { id: '3', name: 'Dr. James Lee', specialty: 'Endocrinology', email: 'james@ferti.com', phone: '+1234567892', patients: 98, status: 'active' as const },
+  { id: '4', name: 'Dr. Emily Chen', specialty: 'Fertility', email: 'emily@ferti.com', phone: '+1234567893', patients: 167, status: 'active' as const },
 ];
 
 const mockAnalytics = {
@@ -35,9 +35,41 @@ const mockAnalytics = {
   ],
 };
 
+const mockDoctorDashboard = {
+  stats: { todayAppointments: 8, totalPatients: 145, pendingConsultations: 3, completedToday: 5 },
+  appointments: [
+    { id: '1', patientName: 'Sarah Johnson', time: '09:00 AM', status: 'completed' as const },
+    { id: '2', patientName: 'Emma Wilson', time: '10:30 AM', status: 'completed' as const },
+    { id: '3', patientName: 'Lisa Brown', time: '02:00 PM', status: 'pending' as const },
+    { id: '4', patientName: 'Mary Davis', time: '03:30 PM', status: 'scheduled' as const },
+  ],
+  recentPatients: [
+    { id: '1', name: 'Sarah Johnson', lastVisit: '2024-01-15' },
+    { id: '2', name: 'Emma Wilson', lastVisit: '2024-01-14' },
+    { id: '3', name: 'Lisa Brown', lastVisit: '2024-01-13' },
+  ],
+};
+
+const mockAppointments = [
+  { id: '1', patientName: 'Sarah Johnson', date: '2024-01-20', time: '09:00 AM', type: 'Consultation', status: 'scheduled' as const },
+  { id: '2', patientName: 'Emma Wilson', date: '2024-01-20', time: '10:30 AM', type: 'Follow-up', status: 'scheduled' as const },
+  { id: '3', patientName: 'Lisa Brown', date: '2024-01-20', time: '02:00 PM', type: 'Initial Visit', status: 'pending' as const },
+  { id: '4', patientName: 'Mary Davis', date: '2024-01-19', time: '03:30 PM', type: 'Consultation', status: 'completed' as const },
+];
+
+const mockPatients = [
+  { id: '1', name: 'Sarah Johnson', age: 32, email: 'sarah@example.com', phone: '+1234567890', lastVisit: '2024-01-15', totalVisits: 8 },
+  { id: '2', name: 'Emma Wilson', age: 28, email: 'emma@example.com', phone: '+1234567891', lastVisit: '2024-01-14', totalVisits: 5 },
+  { id: '3', name: 'Lisa Brown', age: 35, email: 'lisa@example.com', phone: '+1234567892', lastVisit: '2024-01-13', totalVisits: 12 },
+  { id: '4', name: 'Mary Davis', age: 30, email: 'mary@example.com', phone: '+1234567893', lastVisit: '2024-01-12', totalVisits: 3 },
+];
+
 export const dashboardAPI = {
   getStats: () => Promise.resolve({ data: mockStats }),
   getUsers: () => Promise.resolve({ data: mockUsers }),
   getDoctors: () => Promise.resolve({ data: mockDoctors }),
   getAnalytics: () => Promise.resolve({ data: mockAnalytics }),
+  getDoctorDashboard: () => Promise.resolve({ data: mockDoctorDashboard }),
+  getAppointments: () => Promise.resolve({ data: mockAppointments }),
+  getPatients: () => Promise.resolve({ data: mockPatients }),
 };
